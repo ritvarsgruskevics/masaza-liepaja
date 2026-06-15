@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Ritvars Gruškevičs | Masāža Liepājā</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0c10;
+            color: #e8eaed;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Navigācija */
+        .navbar {
+            background-color: #07090c;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #2a2e35;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo a {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #d4af37;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #e8eaed;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #d4af37;
+        }
+
+        /* Konteineri */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+            scroll-margin-top: 80px;
+        }
+
+        h1, h2, h3 {
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: #ffffff;
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-left: 4px solid #d4af37;
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            color: #d4af37;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #d4af37;
+            color: #0a0c10;
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 40px;
+            transition: all 0.2s;
+            margin-top: 1rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #bfa12e;
+            transform: translateY(-2px);
+        }
+
+        /* Pakalpojumu kartes */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .service-card {
+            background-color: #14171c;
+            padding: 1.8rem;
+            border-radius: 16px;
+            border: 1px solid #2a2e35;
+            transition: transform 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+        }
+
+        .price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #d4af37;
+            margin: 1rem 0 0.5rem;
+        }
+
+        /* Info rinda (adreses, laiks) */
+        .info-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            background-color: #14171c;
+            padding: 1.8rem;
+            border-radius: 16px;
+            margin-top: 1rem;
+        }
+
+        .info-block {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .info-block h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .address-list {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+
+        .address-list li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* Kalendāra sadaļa */
+        .calendar-link {
+            text-align: center;
+            background: linear-gradient(145deg, #14171c, #0f1115);
+            padding: 2rem;
+            border-radius: 24px;
+            margin: 2rem 0;
+        }
+
+        /* Kontakti */
+        .contact-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+            background-color: #14171c;
+            padding: 2rem;
+            border-radius: 16px;
+        }
+
+        .contact-details {
+            flex: 1;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #2a2e35;
+            padding: 8px 16px;
+            border-radius: 40px;
+            text-decoration: none;
+            color: #e8eaed;
+            margin-top: 1rem;
+            transition: background 0.2s;
+        }
+
+        .social-link:hover {
+            background-color: #d4af37;
+            color: #0a0c10;
+        }
+
+        /* Rakstu sadaļa */
+        .articles-teaser {
+            background-color: #14171c;
+            padding: 1.8rem;
+            border-radius: 16px;
+        }
+
+        .placeholder-article {
+            border-left: 2px solid #d4af37;
+            padding-left: 1rem;
+            margin: 1.2rem 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #2a2e35;
+            margin-top: 2rem;
+            color: #9aa0a6;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+            .container {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo"><a href="#">Ritvars Gruškevičs</a></div>
+    <ul class="nav-links">
+        <li><a href="#par-mani">Par mani</a></li>
+        <li><a href="#pakalpojumi">Pakalpojumi</a></li>
+        <li><a href="#info">Info</a></li>
+        <li><a href="#pieteiksana">Pieteikšanās</a></li>
+        <li><a href="#kontakti">Kontakti</a></li>
+        <li><a href="#raksti">Raksti</a></li>
+    </ul>
+</nav>
+
+<main class="container">
+    <!-- Par mani -->
+    <section id="par-mani">
+        <h1>Profesionāla masāža <span class="highlight">Liepājā</span></h1>
+        <p style="font-size: 1.2rem; margin-bottom: 1rem;">Atbrīvo spriedzi, atjauno enerģiju un rūpējies par savu ķermeni ar individuālu pieeju.</p>
+        <p>Sveicināts! Esmu Ritvars Gruškevičs – masāžas speciālists ar pieredzi, kas palīdzēs atjaunot muskuļu līdzsvaru, mazināt sāpes un uzlabot vispārējo pašsajūtu. Strādāju gan ar klientiem, kuriem nepieciešama terapeitiskā masāža, gan tiem, kuri vēlas dziļu relaksāciju un labsajūtu.</p>
+        <a href="#pieteiksana" class="btn">Pieteikt masāžu</a>
+    </section>
+
+    <!-- Pakalpojumi -->
+    <section id="pakalpojumi">
+        <h2>Pakalpojumi un cenas</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Klīniskā / ārstnieciskā masāža</h3>
+                <p>Mērķtiecīga muskuļu sasprindzinājuma, sāpju un disfunkciju mazināšanai. Piemērots muguras, kakla, jostas vai locītavu problēmām.</p>
+                <div class="price">50 € / h</div>
+            </div>
+            <div class="service-card">
+                <h3>Relaksējošā masāža</h3>
+                <p>Viegla, plūstoša masāža, kas nomierina nervu sistēmu, mazina stresu un uzlabo miegu.</p>
+                <div class="price">50 € / h</div>
+            </div>
+            <div class="service-card">
+                <h3>Klasiskā masāža</h3>
+                <p>Tradicionālie paņēmieni – berzēšana, mīcīšana, vibrācija – visam ķermenim. Uzlabo asinsriti un vielmaiņu.</p>
+                <div class="price">50 € / h</div>
+            </div>
+        </div>
+        <p style="margin-top: 1rem;">* Ilgums no 30 līdz 90 minūtēm – cena tiek aprēķināta proporcionāli stundai.</p>
+    </section>
+
+    <!-- Darba laiks un adreses -->
+    <section id="info">
+        <h2>Darba laiks un atrašanās vieta</h2>
+        <div class="info-row">
+            <div class="info-block">
+                <h3>🕒 Darba laiks</h3>
+                <p>Pirmdiena – Piektdiena<br><strong>10:30 – 18:00</strong></p>
+                <p>Brīvdienās – pēc iepriekšēja pieraksta.</p>
+            </div>
+            <div class="info-block">
+                <h3>📍 Masāžas kabineti</h3>
+                <ul class="address-list">
+                    <li><strong>Ziemeļu iela 19</strong>, Liepāja</li>
+                    <li><strong>Ludviņa iela 4</strong>, Liepāja</li>
+                </ul>
+                <p style="margin-top: 8px;">Lūdzu, pierakstoties norādiet vēlamo adresi.</p>
+            </div>
+            <div class="info-block">
+                <h3>💳 Norēķini</h3>
+                <p>Skaidra nauda | Bankas pārskaitījums</p>
+                <p>Saņemot pakalpojumu, Jūs saņemsiet arī čeku/rēķinu.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kalendāra sadaļa -->
+    <section id="pieteiksana">
+        <h2>Pieteikšanās</h2>
+        <div class="calendar-link">
+            <p style="margin-bottom: 1rem;">Rezervē savu laiku ātri un ērti – izmanto Google kalendāru.</p>
+            <a href="https://calendar.app.google/DfghedtrgcvfZyJn6" target="_blank" class="btn" style="background:#ffffff; color:#0a0c10;">➡️ Rezervēt masāžu (Google Calendar)</a>
+            <p style="margin-top: 1.2rem; font-size: 0.9rem;">Pēc pieraksta saņemsi apstiprinājumu e-pastā. Ja nepieciešams, vari mainīt vai atcelt tikšanos.</p>
+        </div>
+    </section>
+
+    <!-- Kontakti un sociālie tīkli -->
+    <section id="kontakti">
+        <h2>Kontakti</h2>
+        <div class="contact-flex">
+            <div class="contact-details">
+                <p><strong>📞 Tālrunis / WhatsApp:</strong> <a href="tel:+37126993819" style="color:#d4af37;">+371 26993819</a></p>
+                <p><strong>✉️ E-pasts:</strong> <a href="mailto:ritvars.gruskevics@gmail.com" style="color:#d4af37;">ritvars.gruskevics@gmail.com</a></p>
+                <a href="https://www.facebook.com/Massage.health.and.relax" target="_blank" class="social-link">📘 Sekot Facebook lapai</a>
+            </div>
+            <div class="contact-details">
+                <p>Iespēja sazināties arī zvanot vai rakstot īsziņu. Ja nevaru atbildēt uzreiz – atbildēšu tuvākajā laikā.</p>
+                <p style="margin-top: 10px;">🔔 Sekojot facebook lapai, pirmais uzzināsi par akcijām un jaunumiem.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Raksti / Papildus informācija -->
+    <section id="raksti">
+        <h2>Iedvesma un padomi veselībai</h2>
+        <div class="articles-teaser">
+            <p>Šeit periodiski publicēšu ieteikumus vingrošanai, pašmasāžas paņēmienus un stāstus par veselīgu dzīvesveidu.</p>
+            <div class="placeholder-article">
+                <strong>⚡ Pirmā tēma: Kā mazināt spriedzi kaklā?</strong>
+                <p>Vienkārši vingrinājumi, ko var veikt ikdienā – kakla rotācijas, plecu pacelšana un maiga stiepšanās. Masāža šo efektu nostiprina. Plašāk drīz!</p>
+            </div>
+            <div class="placeholder-article">
+                <strong>🧘 Elpošana – relaksācijas pamats</strong>
+                <p>Diafragmas elpošana nomierina nervu sistēmu un palīdz masāžas laikā sasniegt dziļāku atslābumu. Izmēģini pirms vizītes!</p>
+            </div>
+            <p style="margin-top: 1rem; font-style: italic;">Ja ir kāda konkrēta tēma, par kuru vēlies uzzināt – raksti man! Ievietošu to šajā sadaļā.</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Ritvars Gruškevičs | Profesionāla masāža Liepājā | Visas tiesības aizsargātas</p>
+    <p style="margin-top: 0.5rem;">📍 Ziemeļu iela 19 & Ludviņa iela 4 | 📞 +371 26993819</p>
+</footer>
+
+</body>
+</html>
