@@ -208,6 +208,133 @@
 
         .articles-teaser { background-color: #14171c; padding: 1.8rem; border-radius: 16px; }
         .placeholder-article { border-left: 2px solid #d4af37; padding-left: 1rem; margin: 1.2rem 0; }
+            background-color: #14171c;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-top: 1.5rem;
+            border: 1px solid #2a2e35;
+        }
+
+        .article-hero {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .article-hero-placeholder {
+            width: 100%;
+            height: 320px;
+            background: linear-gradient(135deg, #14171c, #1a2010);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: #9aa0a6;
+            font-size: 0.9rem;
+        }
+
+        .article-hero-placeholder span.big { font-size: 3rem; }
+
+        .article-body {
+            padding: 2rem;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.2rem;
+            font-size: 0.82rem;
+            color: #9aa0a6;
+        }
+
+        .article-tag {
+            background: #1e2a14;
+            color: #7ec850;
+            border: 1px solid #4a7a28;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+        }
+
+        .article-body h3 {
+            font-size: 1.6rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .article-body h4 {
+            font-size: 1.1rem;
+            color: #d4af37;
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        .article-body p {
+            color: #c0c4cc;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .article-body ul {
+            color: #c0c4cc;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin: 0.5rem 0 1rem 1.5rem;
+        }
+
+        .article-body ul li { margin-bottom: 0.4rem; }
+
+        .article-disclaimer {
+            background: #0f1115;
+            border-left: 3px solid #d4af37;
+            padding: 1rem 1.2rem;
+            border-radius: 0 8px 8px 0;
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: #9aa0a6;
+            font-style: italic;
+        }
+
+        .article-refs {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #2a2e35;
+            font-size: 0.75rem;
+            color: #6a7080;
+            line-height: 1.6;
+        }
+
+        .article-share {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #2a2e35;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .article-share span { color: #9aa0a6; font-size: 0.9rem; }
+
+        .share-fb {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #1877f2;
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+
+        .share-fb:hover { background: #1464d0; }
 
         /* ===== PROFILA FOTO ===== */
         .portfolio-header {
@@ -1303,17 +1430,96 @@
     <!-- RAKSTI -->
     <section id="raksti">
         <h2>Iedvesma un padomi veselībai</h2>
-        <div class="articles-teaser">
-            <p>Šeit periodiski publicēšu ieteikumus vingrošanai, pašmasāžas paņēmienus un stāstus par veselīgu dzīvesveidu.</p>
+
+        <!-- RAKSTS 1 — Viscerālie tauki -->
+        <div class="article-full">
+
+            <!-- Aizstāj zemāk esošo div ar <img src="raksti/visceral-tauki.jpg" ...> pēc foto augšupielādes -->
+            <div class="article-hero-placeholder">
+                <span class="big">💪</span>
+                <span>Pievieno attēlu: raksti/visceral-tauki.jpg</span>
+            </div>
+
+            <div class="article-body">
+                <div class="article-meta">
+                    <span>📅 2026. gads</span>
+                    <span>✍️ Ritvars Gruškevičs</span>
+                    <span class="article-tag">Veselība</span>
+                    <span class="article-tag">Vīriešiem</span>
+                    <span class="article-tag">Fitness</span>
+                </div>
+
+                <h3>Kā samazināt viscerālo vēdera tauku daudzumu vīriešiem pēc 40/50 gadiem: detalizēts bioķīmiskais plāns</h3>
+
+                <p>Šis plāns piedāvā stratēģisku pieeju vēdera tauku samazināšanai vīriešiem, koncentrējoties uz bioķīmiskiem procesiem organismā. Tas apvieno uztura, fizisko aktivitāšu un miega optimizāciju, lai veicinātu efektīvu tauku dedzināšanu un uzlabotu vispārējo veselību.</p>
+
+                <h4>1. Kontrolējiet insulīna līmeni</h4>
+                <p>Katrs kumoss, kas tiek apēsts starp ēdienreizēm, izraisa insulīna izdalīšanos — bet insulīns efektīvi bloķē tauku dedzināšanas procesus. Ieteicams pāriet uz <strong>trīs ēdienreizēm dienā bez uzkodām</strong>. Šāda pieeja palīdz stabilizēt cukura līmeni asinīs un samazina insulīna svārstības, ļaujot organismam piekļūt tauku rezervēm enerģijai.</p>
+                <p><strong>Uztura fokuss:</strong></p>
+                <ul>
+                    <li><strong>Olbaltumvielas</strong> — gaļa, zivis, olas, pākšaugi. Veicina sāta sajūtu un palīdz saglabāt muskuļu masu.</li>
+                    <li><strong>Veselīgie tauki</strong> — avokado, rieksti, sēklas, olīveļļa. Svarīgi hormonu ražošanai.</li>
+                    <li><strong>Dārzeņi un šķiedrvielas</strong> — regulē cukura līmeni, uzlabo gremošanu.</li>
+                    <li><strong>Vakariņās minimizēt ogļhidrātus.</strong></li>
+                </ul>
+                <p>Pēc lielākās ēdienreizes <strong>pastaigājieties 15 minūtes</strong> — muskuļi tieši izmanto glikozi, samazinot insulīna pīķi.</p>
+
+                <h4>2. Aizstājiet nogurdinošu skriešanu ar spēka treniņiem</h4>
+                <p>Pēc 40 gadu vecuma ilgstoša zemas intensitātes skriešana var nodeldēt locītavas un paaugstināt kortizola līmeni — stresa hormonu, kas veicina tauku uzkrāšanos ap vidukli. Tā vietā — <strong>trīs spēka treniņi nedēļā</strong> (ar svariem vai ar paša ķermeņa svaru).</p>
+                <p>Spēka treniņi stimulē dabiskā testosterona ražošanu, kas ir būtisks muskuļu masas uzturēšanai. Muskuļu masa pat miera stāvoklī patērē vairāk kaloriju nekā tauki.</p>
+
+                <h4>3. Aktivizējiet nakts tauku dedzināšanu</h4>
+                <p>Galvenais vīriešu tauku dedzināšanas hormons — <strong>somatotropīns</strong> — tiek ražots naktī dziļā miega fāzē pie zema cukura līmeņa asinīs.</p>
+                <ul>
+                    <li><strong>Neēdiet 3 stundas pirms gulētiešanas</strong> — tas maksimāli palielina augšanas hormona izdalīšanos.</li>
+                    <li><strong>Gulēt ejiet ap 22:00</strong> — organisms aktīvi izstrādā melatonīnu.</li>
+                    <li><strong>Pilnīga tumsa un vēsums (~18°C)</strong> guļamistabā uzlabo miega kvalitāti un dziļumu.</li>
+                </ul>
+
+                <h4>Papildu ieteikumi</h4>
+                <ul>
+                    <li><strong>Stresa mazināšana</strong> — meditācija, joga vai elpošanas vingrinājumi samazina kortizolu.</li>
+                    <li><strong>Pietiekams ūdens daudzums</strong> — būtisks vielmaiņas procesiem.</li>
+                    <li><strong>Alkohola ierobežošana</strong> — alkohols satur daudz kaloriju un traucē tauku vielmaiņu.</li>
+                </ul>
+
+                <div class="article-disclaimer">
+                    ⚕️ <strong>N.B.</strong> Pirms jebkādu būtisku uztura vai fizisko aktivitāšu izmaiņu veikšanas ieteicams konsultēties ar ārstu vai kvalificētu uztura speciālistu. Masāža var būt lielisks papildinājums aktīvam dzīvesveidam — tā palīdz mazināt muskuļu spriedzi pēc treniņiem un uzlabot asinsriti.
+                </div>
+
+                <details style="margin-top:1.2rem;">
+                    <summary style="cursor:pointer; color:#9aa0a6; font-size:0.82rem;">📚 Zinātniskās atsauces (klikšķini, lai atvērtu)</summary>
+                    <div class="article-refs">
+                        [1] Ludwig & Ebbeling (2018). The Carbohydrate-Insulin Model. JAMA Internal Medicine.<br>
+                        [2] Paddon-Jones et al. (2008). Protein and exercise. The Journal of Nutrition.<br>
+                        [3] Hu, F.B. (2005). Dietary fat and coronary heart disease. JACN.<br>
+                        [4] Slavin, J.L. (2005). Dietary fiber and body weight. Nutrition.<br>
+                        [6] Epel et al. (2001). Stress and abdominal fat. Psychoneuroendocrinology.<br>
+                        [7] Westcott, W.L. (2012). Resistance training is medicine. Current Sports Medicine Reports.<br>
+                        [9] Van Cauter et al. (1998). Sleep and somatotropic axis. Sleep.<br>
+                        [12] Okamoto-Mizuno & Mizuno (2012). Thermal environment and sleep. J Physiological Anthropology.<br>
+                        [14] Popkin et al. (2010). Water, hydration, and health. Nutrition Reviews.
+                    </div>
+                </details>
+
+                <div class="article-share">
+                    <span>Dalīties:</span>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://ritvarsgruskevics.github.io/masaza-liepaja/%23raksti" target="_blank" class="share-fb">📘 Dalīties Facebook</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- VIETTURS nākamajiem rakstiem -->
+        <div class="articles-teaser" style="margin-top:2rem;">
+            <p style="color:#9aa0a6; font-size:0.9rem;">📝 Turpmāk šeit parādīsies jauni raksti par veselību, masāžu un labsajūtu. Ja ir kāda konkrēta tēma — raksti man!</p>
             <div class="placeholder-article">
-                <strong>⚡ Pirmā tēma: Kā mazināt spriedzi kaklā?</strong>
-                <p>Vienkārši vingrinājumi, ko var veikt ikdienā – kakla rotācijas, plecu pacelšana un maiga stiepšanās. Masāža šo efektu nostiprina. Plašāk drīz!</p>
+                <strong>⚡ Nākamā tēma: Kā mazināt spriedzi kaklā?</strong>
+                <p>Vienkārši vingrinājumi ikdienā — kakla rotācijas, plecu pacelšana un maiga stiepšanās. Drīz!</p>
             </div>
             <div class="placeholder-article">
-                <strong>🧘 Elpošana – relaksācijas pamats</strong>
-                <p>Diafragmas elpošana nomierina nervu sistēmu un palīdz masāžas laikā sasniegt dziļāku atslābumu. Izmēģini pirms vizītes!</p>
+                <strong>🧘 Elpošana — relaksācijas pamats</strong>
+                <p>Diafragmas elpošana nomierina nervu sistēmu. Izmēģini pirms masāžas vizītes!</p>
             </div>
-            <p style="margin-top:1rem; font-style:italic;">Ja ir kāda konkrēta tēma, par kuru vēlies uzzināt – raksti man! Ievietošu to šajā sadaļā.</p>
         </div>
     </section>
 
